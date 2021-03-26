@@ -1,0 +1,2 @@
+alert tcp any any -> any 3399 (flow:established;flowbits:set,is_bot;content:"login";content:"Initial";sid:1000983; rev:1;)
+alert tcp any any -> any 3399 (msg:"bot founded";flow:established;flowbits:isset,is_bot;pcre:"/((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))\:([1-9][0-9]*)+/";sid:1000001; rev:1;)
